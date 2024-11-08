@@ -13,10 +13,6 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages2"
-  cancel-in-progress: true
-
 jobs:
   deploy:
     environment:
