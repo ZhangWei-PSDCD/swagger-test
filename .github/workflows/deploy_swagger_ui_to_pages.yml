@@ -14,28 +14,20 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages2"
   cancel-in-progress: true
 
 jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}/pages2
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           path: main
-      - name: Checkout swagger-ui
-        uses: actions/checkout@v3
-        with:
-          repository: swagger-api/swagger-ui
-          ref: 'v4.15.5'
-          path: swagger-ui
-      - name: Inject Swagger static files
-        run: cp -n swagger-ui/dist/* main/docs/dist/swagger-ui
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
