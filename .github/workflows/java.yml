@@ -24,13 +24,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: main
-      - run: ls
-      - run: cd main
-      - run: tree
-      - run: cd /main/docs/dist/
-      - run: ls
       - name: rename
-        run: sudo mv /main/docs/dist/swagger-ui /main/docs/dist/swagger-ui-java
+        run: sudo mv main/docs/dist/swagger-ui main/docs/dist/swagger-ui-java
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
