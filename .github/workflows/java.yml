@@ -27,7 +27,7 @@ jobs:
       - name: cd
         run: cd 'main/docs/dist'
       - name: rename
-        run: mv 'swagger-ui' 'swagger-ui-java'
+        run: sudo mv swagger-ui swagger-ui-java
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
