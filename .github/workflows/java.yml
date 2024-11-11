@@ -24,6 +24,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: main
+      - run: ls
       - run: cd /main/docs/dist/
       - run: ls
       - name: rename
