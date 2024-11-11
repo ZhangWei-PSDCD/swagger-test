@@ -1,4 +1,4 @@
-name: Deploy Swagger UI to Pages
+name: JAVA
 
 on:
   push:
@@ -17,13 +17,15 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}swagger-ui
+      url: ${{ steps.deployment.outputs.page_url }}swagger-ui-java
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           path: main
+      - name: rename
+        run: mv '/main/docs/dist/swagger-ui' '/main/docs/dist/swagger-ui-java'
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
