@@ -25,6 +25,8 @@ jobs:
         with:
           path: main
       - run: ls
+      - run: cd main
+      - run: tree
       - run: cd /main/docs/dist/
       - run: ls
       - name: rename
