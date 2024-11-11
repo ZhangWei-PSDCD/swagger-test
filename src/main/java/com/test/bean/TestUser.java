@@ -2,7 +2,7 @@ package com.test.bean;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
-@Schema(name = "ユーザ情報Bean")
+@Schema(name = "UserInfo")
 public class TestUser {
 
 	@Schema(name = "ユーザーID",description="最大長さ:1000",defaultValue="1001")
